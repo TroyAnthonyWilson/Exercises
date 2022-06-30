@@ -15,7 +15,7 @@ namespace Exercises
             ExThirteenDesc();
             do
             {
-                int number = Tools.GetInt();
+                int number = Tools.GetInt(1);
 
                 for(int i = number; i >= 0; i--)
                 {

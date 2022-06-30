@@ -18,7 +18,7 @@ namespace Exercises
             {
                 do
                 {
-                    input = Tools.GetInt();
+                    input = Tools.GetInt(0);
                 } while(IsInArray(input, intArray)); 
             } while(Tools.IsYes());
         }

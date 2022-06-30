@@ -19,7 +19,23 @@ namespace Exercises
             {
                 Console.Clear();
                 Console.Write("Please enter a number: ");
-            } while(!int.TryParse(Console.ReadLine(), out x) || x < 0);
+            } while(!int.TryParse(Console.ReadLine(), out x));
+            Console.Clear();
+            return x;
+        }
+
+        /// <summary>
+        /// Gets a positive int form the user
+        /// </summary>
+        /// <returns>Positive int</returns>
+        public static int GetInt(int low)
+        {
+            int x;
+            do
+            {
+                Console.Clear();
+                Console.Write("Please enter a number: ");
+            } while(!int.TryParse(Console.ReadLine(), out x) || x < low);
             Console.Clear();
             return x;
         }
@@ -36,7 +52,24 @@ namespace Exercises
             {
                 Console.Clear();
                 Console.Write(disc);
-            } while(!int.TryParse(Console.ReadLine(), out x) || x < 0);
+            } while(!int.TryParse(Console.ReadLine(), out x));
+            Console.Clear();
+            return x;
+        }
+
+        /// <summary>
+        /// Gets a int form the user
+        /// </summary>
+        /// <param name="disc">Input custom number request</param>
+        /// <returns>Positive int</returns>
+        public static int GetInt(string disc, int low)
+        {
+            int x;
+            do
+            {
+                Console.Clear();
+                Console.Write(disc);
+            } while(!int.TryParse(Console.ReadLine(), out x) || x < low);
             Console.Clear();
             return x;
         }

@@ -17,7 +17,7 @@ namespace Exercises
                 int intArrayIndex;
                 do
                 {
-                    intArrayIndex = Tools.GetInt("Enter the index of the array: ");
+                    intArrayIndex = Tools.GetInt("Enter the index of the array: ", 0);
                     if(intArrayIndex > intArray.Length)
                     {
                         Console.WriteLine("That is not a valid index.");

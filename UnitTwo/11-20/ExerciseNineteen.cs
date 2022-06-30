@@ -27,7 +27,7 @@ namespace Exercises
                     }
                 } while(x > y);
 
-                Console.WriteLine($"The sume of all the number from {x} to {y} is {Total(x, y)}");
+                Console.WriteLine($"The sum of all the number from {x} to {y} is {Total(x, y)}");
 
             } while(Tools.IsYes());
         }
