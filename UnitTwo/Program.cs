@@ -122,6 +122,9 @@ namespace Exercises
                 case "33":
                     _ = new ExerciseThirtythree();
                     break;
+                case "34":
+                    _ = new ExerciseThirtyfour();
+                    break;
                 default:
                     break;
             }

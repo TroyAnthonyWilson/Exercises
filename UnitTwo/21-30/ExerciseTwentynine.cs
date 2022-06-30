@@ -33,7 +33,7 @@ namespace Exercises
                     }
                     else
                     {
-                        string cut = words[i].Substring(1, words[i].Length - 2);
+                        string cut = words[i][1..^1];
                         var charsToRemove = new string[] { "a", "A", "e", "E", "i", "I", "o", "O", "u", "U" };
                         foreach(var c in charsToRemove)
                         {
