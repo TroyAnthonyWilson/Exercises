@@ -15,11 +15,24 @@ namespace Exercises
         public static int GetInt()
         {
             int x;
+            bool isNumber;
             do
             {
                 Console.Clear();
                 Console.Write("Please enter a number: ");
-            } while(!int.TryParse(Console.ReadLine(), out x));
+                if(int.TryParse(Console.ReadLine(), out x))
+                {
+
+                    isNumber = false;
+                }
+                else
+                {
+                    Console.WriteLine("Sorry that is not a valid number");
+                    Thread.Sleep(2000);
+                    isNumber = true;
+                }
+
+            } while(isNumber);
             Console.Clear();
             return x;
         }
@@ -31,11 +44,24 @@ namespace Exercises
         public static int GetInt(int low)
         {
             int x;
+            bool isNumber;
             do
             {
                 Console.Clear();
                 Console.Write("Please enter a number: ");
-            } while(!int.TryParse(Console.ReadLine(), out x) || x < low);
+                if(int.TryParse(Console.ReadLine(), out x) && x > low)
+                {
+
+                    isNumber = false;
+                }
+                else
+                {
+                    Console.WriteLine("Sorry that is not a valid number");
+                    Thread.Sleep(2000);
+                    isNumber = true;
+                }
+
+            } while(isNumber);
             Console.Clear();
             return x;
         }
@@ -48,11 +74,24 @@ namespace Exercises
         public static int GetInt(string disc)
         {
             int x;
+            bool isNumber;
             do
             {
                 Console.Clear();
                 Console.Write(disc);
-            } while(!int.TryParse(Console.ReadLine(), out x));
+                if(int.TryParse(Console.ReadLine(), out x))
+                {
+
+                    isNumber = false;
+                }
+                else
+                {
+                    Console.WriteLine("Sorry that is not a valid number");
+                    Thread.Sleep(2000);
+                    isNumber = true;
+                }
+
+            } while(isNumber);
             Console.Clear();
             return x;
         }
@@ -65,11 +104,24 @@ namespace Exercises
         public static int GetInt(string disc, int low)
         {
             int x;
+            bool isNumber;
             do
             {
                 Console.Clear();
                 Console.Write(disc);
-            } while(!int.TryParse(Console.ReadLine(), out x) || x < low);
+                if(int.TryParse(Console.ReadLine(), out x) && x > low)
+                {
+
+                    isNumber = false;
+                }
+                else
+                {
+                    Console.WriteLine("Sorry that is not a valid number");
+                    Thread.Sleep(2000);
+                    isNumber = true;
+                }
+
+            } while(isNumber);
             Console.Clear();
             return x;
         }
@@ -126,7 +178,12 @@ namespace Exercises
                 else if(awnser == "n" || awnser == "no" || awnser == "nope")
                 {
                     return false;
-                } 
+                }
+                else
+                {
+                    Console.WriteLine("Sorry that is not a valid answer");
+                    Thread.Sleep(2000);
+                }
             } while(true);
         }
 

@@ -13,7 +13,7 @@ namespace Exercises
             ExEightteenDesc();
             do
             {
-                int number = Tools.GetInt();
+                int number = Tools.GetInt(1);
                 Console.WriteLine(Total(number)); 
             } while(Tools.IsYes());
 
