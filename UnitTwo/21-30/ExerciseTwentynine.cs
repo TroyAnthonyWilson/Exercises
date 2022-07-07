@@ -14,8 +14,6 @@ namespace Exercises
             do
             {
                 string str;
-                string firstLetter;
-                string laserLetter;
                 do
                 {
                     Console.Clear();
