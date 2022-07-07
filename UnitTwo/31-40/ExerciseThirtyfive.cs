@@ -21,7 +21,7 @@ namespace Exercises
 
                 Console.WriteLine();
 
-            } while(Tools.IsYes());
+            } while(Tools.IsYes()); 
 
         }
 
