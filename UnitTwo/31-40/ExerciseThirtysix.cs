@@ -10,6 +10,27 @@ namespace Exercises
     {
         public ExerciseThirtysix()
         {
+            Desc();
+            int[] intArray = { 12, 11, 10, 9, 8 };
+            string[] strArray = { "Drummers Drumming", "Pipers Piping", "Lords a-Leaping", "Ladies Dancing", "Maids a-Milking"};
+
+            do
+            {
+                Console.Write("Enter a command (sing/quit): ");
+                string userInput = Console.ReadLine().ToLower().Trim();
+                if("sing".StartsWith(userInput))
+                {
+                    Console.Clear();
+                    for(int i = 0; i < intArray.Length; i++)
+                    {
+                        Console.WriteLine($"{intArray[i]} {strArray[i]}");
+                    }
+                }
+                else if("quit".StartsWith(userInput))
+                {
+                    return;
+                }
+            } while(true);
 
         }
 
