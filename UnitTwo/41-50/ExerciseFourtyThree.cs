@@ -15,18 +15,14 @@ namespace Exercises
                     x = Tools.GetInt("Enter an X coordinate: "),
                     y = Tools.GetInt("Enter an Y coordinate: ")
                 };
-
-                double distance = Math.Sqrt((Math.Pow(point.x, 2) + Math.Pow(point.y, 2)));
-
-                Console.WriteLine($"You have created a point object ({point.x},{point.y}) if has a distance of {distance}.");
-
+                Console.WriteLine($"You have created a point object ({point.x},{point.y}) if has a distance of {Point.CalculateDistance(point)}.");
             } while(Tools.IsYes());
         }
 
         private static void Desc()
         {
-            Description.DescriptionCall("Create a class called Point, that has two properties, X and Y.\n" +
-                "Let the user enter an X and Y value to create a Point object.");
+            Description.DescriptionCall("Enhance the point class in the previous exercise by adding a CalculateDistance method.\n" +
+                "The distance method will calculate the distance of a point from the origin, (0,0).  ");
         }
     }
 
