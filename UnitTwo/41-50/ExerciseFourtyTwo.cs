@@ -7,9 +7,11 @@
             Desc();
             do
             {
-                Point point = new();
-                point.x = Tools.GetInt("Enter an X coordinate: ");
-                point.y = Tools.GetInt("Enter an Y coordinate: ");
+                Point point = new()
+                {
+                    x = Tools.GetInt("Enter an X coordinate: "),
+                    y = Tools.GetInt("Enter an Y coordinate: ")
+                };
 
                 Console.WriteLine($"You have created a point object ({point.x},{point.y})");
 
