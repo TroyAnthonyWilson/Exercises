@@ -171,18 +171,13 @@ namespace Exercises
                 Console.Write("Would you like to continue (Y/N)? ");
                 string awnser = Console.ReadLine().ToLower().Trim();
                 Console.Clear();
-                if(awnser == "y" || awnser == "yes" || awnser == "yup")
+                if("yes".StartsWith(awnser))
                 {
                     return true;
                 }
-                else if(awnser == "n" || awnser == "no" || awnser == "nope")
+                else if("nope".StartsWith(awnser))
                 {
                     return false;
-                }
-                else
-                {
-                    Console.WriteLine("Sorry that is not a valid answer");
-                    Thread.Sleep(2000);
                 }
             } while(true);
         }
@@ -199,11 +194,11 @@ namespace Exercises
                 Console.Write(desc);
                 string awnser = Console.ReadLine().ToLower().Trim();
                 Console.Clear();
-                if(awnser == "y" || awnser == "yes" || awnser == "yup")
+                if("yes".StartsWith(awnser))
                 {
                     return true;
                 }
-                else if(awnser == "n" || awnser == "no" || awnser == "nope")
+                else if("nope".StartsWith(awnser))
                 {
                     return false;
                 }
