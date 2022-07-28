@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Exercises
+﻿namespace Exercises
 {
     internal class Tools
     {
@@ -14,27 +8,19 @@ namespace Exercises
         /// <returns>Positive int</returns>
         public static int GetInt()
         {
-            int x;
-            bool isNumber;
             do
             {
                 Console.Clear();
                 Console.Write("Please enter a number: ");
-                if(int.TryParse(Console.ReadLine(), out x))
+                if(int.TryParse(Console.ReadLine(), out int x))
                 {
-
-                    isNumber = false;
+                    Console.Clear();
+                    return x;
                 }
-                else
-                {
-                    Console.WriteLine("Sorry that is not a valid number");
-                    Thread.Sleep(2000);
-                    isNumber = true;
-                }
-
-            } while(isNumber);
-            Console.Clear();
-            return x;
+                Console.WriteLine("Sorry that is not a valid number");
+                Thread.Sleep(2000);
+                Console.Clear();
+            } while(true);
         }
 
         /// <summary>
@@ -43,87 +29,63 @@ namespace Exercises
         /// <returns>Positive int</returns>
         public static int GetInt(int low)
         {
-            int x;
-            bool isNumber;
             do
             {
                 Console.Clear();
                 Console.Write("Please enter a number: ");
-                if(int.TryParse(Console.ReadLine(), out x) && x > low)
+                if(int.TryParse(Console.ReadLine(), out int x) && x >= low)
                 {
-
-                    isNumber = false;
+                    Console.Clear();
+                    return x;
                 }
-                else
-                {
-                    Console.WriteLine("Sorry that is not a valid number");
-                    Thread.Sleep(2000);
-                    isNumber = true;
-                }
-
-            } while(isNumber);
-            Console.Clear();
-            return x;
+                Console.WriteLine("Sorry that is not a valid number");
+                Thread.Sleep(2000);
+                Console.Clear();
+            } while(true);
         }
 
         /// <summary>
         /// Gets a positive int form the user
         /// </summary>
-        /// <param name="disc">Input custom number request</param>
+        /// <param name="discription">Input custom number request</param>
         /// <returns>Positive int</returns>
-        public static int GetInt(string disc)
+        public static int GetInt(string discription)
         {
-            int x;
-            bool isNumber;
             do
             {
                 Console.Clear();
-                Console.Write(disc);
-                if(int.TryParse(Console.ReadLine(), out x))
+                Console.Write(discription);
+                if(int.TryParse(Console.ReadLine(), out int x))
                 {
-
-                    isNumber = false;
+                    Console.Clear();
+                    return x;
                 }
-                else
-                {
-                    Console.WriteLine("Sorry that is not a valid number");
-                    Thread.Sleep(2000);
-                    isNumber = true;
-                }
-
-            } while(isNumber);
-            Console.Clear();
-            return x;
+                Console.WriteLine("Sorry that is not a valid number");
+                Thread.Sleep(2000);
+                Console.Clear();
+            } while(true);
         }
 
         /// <summary>
         /// Gets a int form the user
         /// </summary>
-        /// <param name="disc">Input custom number request</param>
+        /// <param name="discription">Input custom number request</param>
         /// <returns>Positive int</returns>
-        public static int GetInt(string disc, int low)
+        public static int GetInt(string discription, int low)
         {
-            int x;
-            bool isNumber;
             do
             {
                 Console.Clear();
-                Console.Write(disc);
-                if(int.TryParse(Console.ReadLine(), out x) && x > low)
+                Console.Write(discription);
+                if(int.TryParse(Console.ReadLine(), out int x) && x > low)
                 {
-
-                    isNumber = false;
+                    Console.Clear();
+                    return x;
                 }
-                else
-                {
-                    Console.WriteLine("Sorry that is not a valid number");
-                    Thread.Sleep(2000);
-                    isNumber = true;
-                }
-
-            } while(isNumber);
-            Console.Clear();
-            return x;
+                Console.WriteLine("Sorry that is not a valid number");
+                Thread.Sleep(2000);
+                Console.Clear();
+            } while(true);
         }
 
         /// <summary>
@@ -165,44 +127,35 @@ namespace Exercises
         {
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
-            do
+
+            Console.Clear();
+            Console.Write("Would you like to continue (Y/N)? ");
+            string awnser = Console.ReadLine().ToLower().Trim();
+            Console.Clear();
+            if("yes".StartsWith(awnser))
             {
-                Console.Clear();
-                Console.Write("Would you like to continue (Y/N)? ");
-                string awnser = Console.ReadLine().ToLower().Trim();
-                Console.Clear();
-                if("yes".StartsWith(awnser))
-                {
-                    return true;
-                }
-                else if("nope".StartsWith(awnser))
-                {
-                    return false;
-                }
-            } while(true);
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
         /// Askes user a yes or no question
         /// </summary>
-        /// <param name="desc">Costom question you would like to ask the user</param>
+        /// <param name="description">Costom question you would like to ask the user</param>
         /// <returns>Bool true or false</returns>
-        public static bool IsYes(string desc)
+        public static bool IsYes(string description)
         {
-            do
             {
-                Console.Write(desc);
+                Console.Write(description);
                 string awnser = Console.ReadLine().ToLower().Trim();
                 Console.Clear();
                 if("yes".StartsWith(awnser))
                 {
                     return true;
                 }
-                else if("nope".StartsWith(awnser))
-                {
-                    return false;
-                }
-            } while(true);
+                return false;
+            }
         }
     }
 }
