@@ -88,6 +88,29 @@
             } while(true);
         }
 
+
+        /// <summary>
+        /// Gets a double form the user
+        /// </summary>
+        /// <param name="discription">Input custom number request</param>
+        /// <returns>Positive double</returns>
+        public static double GetDouble(string discription, double low)
+        {
+            do
+            {
+                Console.Clear();
+                Console.Write(discription);
+                if(double.TryParse(Console.ReadLine(), out double x) && x > low)
+                {
+                    Console.Clear();
+                    return x;
+                }
+                Console.WriteLine("Sorry that is not a valid number");
+                Thread.Sleep(2000);
+                Console.Clear();
+            } while(true);
+        }
+
         /// <summary>
         /// Gets floating poit number form the user
         /// </summary>
