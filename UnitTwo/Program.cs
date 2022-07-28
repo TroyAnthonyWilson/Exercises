@@ -11,7 +11,7 @@ namespace Exercises
         static void Main()
         {
             Console.WriteLine("Please choose an exercise");
-            Console.WriteLine("Exercises 1 - 34");
+            Console.WriteLine("Exercises 1 - 41");
             Console.WriteLine("Exercises 1-6 and 1-7");
             string choice = Console.ReadLine().Trim();
             Console.Clear();
@@ -130,6 +130,30 @@ namespace Exercises
                     break;
                 case "36":
                     _ = new ExerciseThirtysix();
+                    break;
+                case "37":
+                    _ = new ExerciseThirtySeven();
+                    break;
+                case "38":
+                    _ = new ExerciseThirtyEight();
+                    break;
+                case "39":
+                    _ = new ExerciseThirtyNine();
+                    break;
+                case "40":
+                    _ = new ExerciseFourty();
+                    break;
+                case "41":
+                    _ = new ExerciseFourtyOne();
+                    break;
+                case "42":
+                    _ = new ExerciseFourtyTwo();
+                    break;
+                case "43":
+                    _ = new ExerciseFourtyThree();
+                    break;
+                case "44":
+                    _ = new ExerciseFourtyFour();
                     break;
                 default:
                     break;
