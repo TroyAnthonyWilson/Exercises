@@ -111,6 +111,33 @@
             } while(true);
         }
 
+
+        /// <summary>
+        /// Gets a double[] form the user
+        /// </summary>
+        /// <param name="discription">Input custom number request</param>
+        /// <returns>Positive double[]</returns>
+        public static double[] GetDoubleArray(string discription, int low, int count)
+        {
+            double[] array = new double[count];
+            int i = 0;
+            while(i < count)
+            {
+                Console.Clear();
+                Console.Write($"{discription} #{i + 1}: ");
+                if(double.TryParse(Console.ReadLine(), out double x) && x > low)
+                {
+                    array[i] = x;
+                    i++;
+                    continue;
+                }
+                Console.WriteLine("Sorry that is not a valid number");
+                Thread.Sleep(2000);
+                Console.Clear();
+            }
+            return array;
+        }
+
         /// <summary>
         /// Gets floating poit number form the user
         /// </summary>
