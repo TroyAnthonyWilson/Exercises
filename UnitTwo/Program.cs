@@ -161,6 +161,9 @@ namespace Exercises
                 case "46":
                     _ = new ExerciseFourtySix();
                     break;
+                case "47":
+                    _ = new ExerciseFourtySeven();
+                    break;
                 default:
                     break;
             }
