@@ -207,5 +207,17 @@
                 return false;
             }
         }
+
+        /// <summary>
+        /// Askes the user to enter a string
+        /// </summary>
+        /// <param name="description"></param>
+        /// <returns>the string that the user entered</returns>
+        public static string GetWord(String description)
+        {
+            Console.Write(description);
+            string userInput = Console.ReadLine();
+            return userInput;
+        }
     }
 }
