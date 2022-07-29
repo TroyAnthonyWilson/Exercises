@@ -66,6 +66,36 @@
             } while(true);
         }
 
+
+        /// <summary>
+        /// Gets a positive int form the user
+        /// </summary>
+        /// <param name="discription">Input custom number request</param>
+        /// <returns>Positive int</returns>
+        public static int GetInt(string discription, out bool isContinue)
+        {
+            do
+            {
+                Console.Clear();
+                Console.Write(discription);
+                string userInput = Console.ReadLine();
+                if(int.TryParse(userInput, out int x))
+                {
+                    Console.Clear();
+                    isContinue = true;
+                    return x;
+                }
+                else if(userInput == "q")
+                {
+                    isContinue = false;
+                    return 0;
+                }
+                Console.WriteLine("Sorry that is not a valid input");
+                Thread.Sleep(2000);
+                Console.Clear();
+            } while(true);
+        }
+
         /// <summary>
         /// Gets a int form the user
         /// </summary>
