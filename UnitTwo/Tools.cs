@@ -68,7 +68,7 @@
 
 
         /// <summary>
-        /// Gets a positive int form the user
+        /// Gets a int form the user
         /// </summary>
         /// <param name="discription">Input custom number request</param>
         /// <returns>Positive int</returns>
@@ -136,6 +136,36 @@
                     return x;
                 }
                 Console.WriteLine("Sorry that is not a valid number");
+                Thread.Sleep(2000);
+                Console.Clear();
+            } while(true);
+        }
+
+
+        /// <summary>
+        /// Gets a double form the user
+        /// </summary>
+        /// <param name="discription">Input custom number request</param>
+        /// <returns>Positive double and bool</returns>
+        public static double GetDouble(string discription, int low, out bool isContinue)
+        {
+            do
+            {
+                Console.Clear();
+                Console.Write(discription);
+                string userInput = Console.ReadLine();
+                if(double.TryParse(userInput, out double x) && x > low)
+                {
+                    Console.Clear();
+                    isContinue = true;
+                    return x;
+                }
+                else if(userInput == "q")
+                {
+                    isContinue = false;
+                    return 0;
+                }
+                Console.WriteLine("Sorry that is not a valid input");
                 Thread.Sleep(2000);
                 Console.Clear();
             } while(true);
