@@ -5,6 +5,8 @@
         private readonly double _side1Length;
         private readonly double _side2Length;
         private readonly double _side3Length;
+        private double _area;
+        private double _perimeter;
 
         public Triangle(double[] sideLength)
         {
@@ -15,15 +17,27 @@
             Console.WriteLine($"The triangle has side lengths {_side1Length}, {_side2Length}, and {_side3Length}.Its area is {CaculateArea()} and its perimeter is {CalculatePerimeter()}.");
         }
 
+        public double Area
+        {
+            get { return _area; }
+        }
+
+        public double Perimeter
+        {
+            get { return _perimeter; }
+        }
+
         public double CalculatePerimeter()
         {
-            return _side1Length + _side2Length + _side3Length;
+            _perimeter = _side1Length + _side2Length + _side3Length;
+            return _perimeter;
         }
 
         public double CaculateArea()
         {
             double s = (_side1Length + _side2Length + _side3Length) / 2;
-            return Math.Sqrt(s * (s - _side1Length) * (s - _side2Length) * (s - _side3Length));
+            _area = Math.Sqrt(s * (s - _side1Length) * (s - _side2Length) * (s - _side3Length));
+            return _area;
         }
     }
 }

@@ -199,6 +199,40 @@
         }
 
         /// <summary>
+        /// Gets a double[] form the user
+        /// </summary>
+        /// <param name="discription">Input custom number request</param>
+        /// <returns>Positive double[]</returns>
+        public static double[] GetDoubleArray(string discription, int low, int count, out bool isContinue)
+        {
+            double[] array = new double[count];
+            int i = 0;
+            isContinue = true;
+            while(i < count)
+            {
+                Console.Clear();
+                Console.Write($"{discription} #{i + 1} (or q to quite): ");
+                string userInput = Console.ReadLine();
+                if(double.TryParse(userInput, out double x) && x > low)
+                {
+                    array[i] = x;
+                    i++;
+                    continue;
+                }
+                else if(userInput == "q")
+                {
+                    isContinue = false;
+                    return array;
+                }
+                Console.WriteLine("Sorry that is not a valid number");
+                Thread.Sleep(2000);
+                Console.Clear();
+            }
+            return array;
+        }
+
+
+        /// <summary>
         /// Gets floating poit number form the user
         /// </summary>
         /// <returns>Floating point number</returns>
