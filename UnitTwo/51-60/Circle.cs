@@ -1,4 +1,4 @@
-﻿namespace Circle_Objects
+﻿namespace Exercises
 {
     public class Circle
     {
