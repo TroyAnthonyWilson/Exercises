@@ -21,6 +21,9 @@
             }
 
             Console.WriteLine($"The triangle has side lengths {_side1Length}, {_side2Length}, and {_side3Length}.Its area is {CaculateArea()} and its perimeter is {CalculatePerimeter()}.");
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public double Area
