@@ -12,16 +12,14 @@
             _side2Length = sideLength[1];
             _side3Length = sideLength[2];
 
-            if(_side1Length + _side2Length == _side3Length || _side1Length + _side3Length == _side2Length || _side2Length + _side3Length == _side1Length)
+            if((_side1Length + _side2Length > _side3Length) && (_side1Length + _side3Length > _side2Length) && (_side2Length + _side3Length > _side1Length))
+            {
+                Console.WriteLine($"The triangle has side lengths {_side1Length}, {_side2Length}, and {_side3Length}.Its area is {CalculateArea()} and its perimeter is {CalculatePerimeter()}.");
+            }
+            else
             {
                 Console.WriteLine("Not a valid triangle.");
-                return;
             }
-
-            Console.WriteLine($"The triangle has side lengths {_side1Length}, {_side2Length}, and {_side3Length}.Its area is {CalculateArea()} and its perimeter is {CalculatePerimeter()}.");
-            Console.WriteLine("Press any key to continue.");
-            Console.ReadKey();
-            Console.Clear();
         }
 
 

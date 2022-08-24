@@ -8,8 +8,8 @@ namespace Exercises
 {
     public abstract class Shape
     {
-        public double _area;
-        public double _perimeter;
+        public double _area = 0;
+        public double _perimeter = 0;
 
         public double Perimeter
         {
