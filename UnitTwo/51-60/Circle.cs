@@ -1,17 +1,15 @@
 ﻿namespace Exercises
 {
-    public class Circle
+    public class Circle : Shape
     {
         private double _radius;
-        private double _area;
-        private double _circumference;
 
         public Circle(double radius)
         {
             Radius = radius;
 
             Console.WriteLine($"You entered a radius of: {Radius}");
-            Console.WriteLine($"Circumference: {CalculateCircumference()}");
+            Console.WriteLine($"Circumference: {CalculatePerimeter()}");
             Console.WriteLine($"Area: {CalculateArea()}");
         }
 
@@ -22,35 +20,24 @@
             set { _radius = value; }
         }
 
-        public double Area
-        {
-            get { return _area; }
-            set { _area = value; }
-        }
-
-        public double Circumference 
-        {
-            get { return _circumference; }
-            set { _circumference = value; }
-        }
 
         /// <summary>
-        /// Caculates circle circumference
+        /// Calculates circle circumference
         /// </summary>
         /// <returns>The circumference of the circle</returns>
-        public double CalculateCircumference()
+        public override double CalculatePerimeter()
         {
-            Circumference = Radius * 2 * Math.PI;
-            return Circumference;
+            _perimeter = Radius * 2 * Math.PI;
+            return Perimeter;
         }
 
         /// <summary>
-        /// Caculates the circles area
+        /// Calculates the circles area
         /// </summary>
         /// <returns>The area of the circle</returns>
-        public double CalculateArea()
+        public override double CalculateArea()
         {
-            Area = Radius * Radius * Math.PI;
+            _area = Radius * Radius * Math.PI;
             return Area;
         }
 

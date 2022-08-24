@@ -1,12 +1,10 @@
 ﻿namespace Exercises
 {
-    internal class Triangle
+    internal class Triangle : Shape
     {
         private readonly double _side1Length;
         private readonly double _side2Length;
         private readonly double _side3Length;
-        private double _area;
-        private double _perimeter;
 
         public Triangle(double[] sideLength)
         {
@@ -20,29 +18,21 @@
                 return;
             }
 
-            Console.WriteLine($"The triangle has side lengths {_side1Length}, {_side2Length}, and {_side3Length}.Its area is {CaculateArea()} and its perimeter is {CalculatePerimeter()}.");
+            Console.WriteLine($"The triangle has side lengths {_side1Length}, {_side2Length}, and {_side3Length}.Its area is {CalculateArea()} and its perimeter is {CalculatePerimeter()}.");
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
             Console.Clear();
         }
 
-        public double Area
-        {
-            get { return _area; }
-        }
 
-        public double Perimeter
-        {
-            get { return _perimeter; }
-        }
 
-        public double CalculatePerimeter()
+        public override double CalculatePerimeter()
         {
             _perimeter = _side1Length + _side2Length + _side3Length;
             return _perimeter;
         }
 
-        public double CaculateArea()
+        public override double CalculateArea()
         {
             double s = (_side1Length + _side2Length + _side3Length) / 2;
             _area = Math.Sqrt(s * (s - _side1Length) * (s - _side2Length) * (s - _side3Length));
