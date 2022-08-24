@@ -14,6 +14,12 @@
             _side2Length = sideLength[1];
             _side3Length = sideLength[2];
 
+            if(_side1Length + _side2Length == _side3Length || _side1Length + _side3Length == _side2Length || _side2Length + _side3Length == _side1Length)
+            {
+                Console.WriteLine("Not a valid triangle.");
+                return;
+            }
+
             Console.WriteLine($"The triangle has side lengths {_side1Length}, {_side2Length}, and {_side3Length}.Its area is {CaculateArea()} and its perimeter is {CalculatePerimeter()}.");
         }
 
