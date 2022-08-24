@@ -17,6 +17,8 @@
                 switch(userInput)
                 {
                     case "1":
+                        double side = Tools.GetDouble("Enter length of square side", 0);
+                        Square.Add
                         break;
                     case "2":
                         double[] sides = Tools.GetDoubleArray("Enter in side", 0, 3);
